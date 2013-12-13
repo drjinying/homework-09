@@ -1,0 +1,135 @@
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <title>Dynamic Show By Shone JIN, Powered by Flat-UI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Loading Bootstrap -->
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+    <!-- Loading Flat UI -->
+    <link href="css/flat-ui.css" rel="stylesheet">
+    <link href="css/demo.css" rel="stylesheet">
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="demo-headline">
+        <h1 class="demo-logo">
+          <div class="logo"></div>Dynamic Show<small>understand the algorithm, by seeing every step of the max-subarray</small>
+        </h1>
+      </div> <!-- /demo-headline -->
+      <h1 class="demo-section-title">Data and Mode</h1>
+        <div class="col-md-2">
+          <h3 class="demo-panel-title">Mode</h3>
+          <label class="radio checked">
+            <span class="icons"><span class="first-icon fui-radio-unchecked"></span><span class="second-icon fui-radio-checked"></span></span><span class="icons"><span class="first-icon fui-radio-unchecked"></span><span class="second-icon fui-radio-checked"></span></span><input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" data-toggle="radio" checked="checked">Mode &nbsp;Normal&nbsp;</label>
+          <label class="radio">
+            <span class="icons"><span class="first-icon fui-radio-unchecked"></span><span class="second-icon fui-radio-checked"></span></span><span class="icons"><span class="first-icon fui-radio-unchecked"></span><span class="second-icon fui-radio-checked"></span></span><input type="radio" name="optionsRadios" id="optionsRadios2" value="option2" data-toggle="radio">Mode &nbsp;H &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</label>
+          <label class="radio">
+            <span class="icons"><span class="first-icon fui-radio-unchecked"></span><span class="second-icon fui-radio-checked"></span></span><span class="icons"><span class="first-icon fui-radio-unchecked"></span><span class="second-icon fui-radio-checked"></span></span><input type="radio" name="optionsRadios" id="optionsRadios3" value="option3" data-toggle="radio">Mode V &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</label>
+          <label class="radio">
+            <span class="icons"><span class="first-icon fui-radio-unchecked"></span><span class="second-icon fui-radio-checked"></span></span><span class="icons"><span class="first-icon fui-radio-unchecked"></span><span class="second-icon fui-radio-checked"></span></span><input type="radio" name="optionsRadios" id="optionsRadios4" value="option4" data-toggle="radio">Mode &nbsp;H&amp;V &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</label>
+        </div> <!-- /checkboxes col-md-3 -->
+<div class="row">
+        <div class="col-md-2">
+          <h3 class="demo-panel-title">Input</h3>
+          <label class="radio checked"  onclick="SetInputActive(true)">
+            <span class="icons"><span class="first-icon fui-radio-unchecked"></span><span class="second-icon fui-radio-checked"></span></span><span class="icons"><span class="first-icon fui-radio-unchecked"></span><span class="second-icon fui-radio-checked"></span></span><input type="radio" name="optionsRadios2" id="inptRadios1" value="option1" data-toggle="radio">Auto &nbsp;Generate &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</label> 
+            <label class="radio"  onclick="SetInputActive(false)">
+            <span class="icons"><span class="first-icon fui-radio-unchecked"></span><span class="second-icon fui-radio-checked"></span></span><span class="icons"><span class="first-icon fui-radio-unchecked"></span><span class="second-icon fui-radio-checked"></span></span><input type="radio" name="optionsRadios2" id="inptRadios2" value="option2" data-toggle="radio">Upload &nbsp;a &nbsp;File</label>
+        </div>     
+<div class="col-md-3" id="input">
+          <p class="demo-panel-title">&nbsp;</p>
+
+          <div class="form-group" id="inptdiv1">
+            <input type="text" value="" placeholder="Metric &nbsp;Dimension" class="form-control" id="inpt1">
+            <!--input type="text" value="Metric &nbsp;Dimension" disabled="disabled" class="form-control" id="inpt1"-->
+          </div>
+          <div class="form-group" id="inptdiv2">
+            <input type="text" value="" placeholder="File &nbsp;Path" disabled="disabled" class="form-control" id="inpt2">
+            <!--input type="text" value="File &nbsp;Path" class="form-control" id="inpt2">
+            <span class="input-icon fui-check-inverted"></span-->
+          </div>
+          <a  onclick="Load()" class="btn btn-block btn-lg btn-primary">Let's &nbsp;Go !!!</a>
+        </div>
+        <div class="col-md-1"></div>
+
+<div class="col-md-3">
+          <h3 class="demo-panel-title">Control</h3>
+          <table width="100%">
+            <tr>
+              <td width="50%" class="pbm">
+              Auto Move
+              </td>
+
+              <td class="pbm">
+                <input type="checkbox" checked="" data-toggle="switch" change="AutoMove()"/>
+              </td>
+            </tr>
+          </table>
+<ul class="pager">
+                <li class="previous">
+                  <a onclick="MovePrev()">
+                    <span class="fui-arrow-left"></span>
+                    <span>Move &nbsp;Steps</span>
+                  </a>
+                </li>
+                <li class="next">
+                  <a onclick="MoveNext()">
+                    <span class="fui-arrow-right"></span>
+                  </a>
+                </li>
+</ul>
+</div>
+</div>     
+<h1 class="demo-section-title">Output</h1> 
+
+    <div class="container">
+<br>
+<div class="col-md-3">
+          <a class="btn btn-block btn-lg btn-warning" id="sum">Current Sum</a>
+        </div>
+
+      <br><br><br>
+        <table  id="showtable">
+<tbody>
+
+
+</tbody>
+        </table>
+    </div>
+</div>
+
+<br><br><br><br><br><br>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-7">
+ 
+          </div> <!-- /col-md-7 -->
+
+          <div class="col-md-5">
+                        <p class="footer-title"> Shone JIN, Powered By Flat UI</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Load JS here for greater good =============================-->
+
+    <script src="js/shonejin.js"></script>
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script src="js/jquery-ui-1.10.3.custom.min.js"></script>
+    <script src="js/jquery.ui.touch-punch.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-select.js"></script>
+    <script src="js/bootstrap-switch.js"></script>
+    <script src="js/flatui-checkbox.js"></script>
+    <script src="js/flatui-radio.js"></script>
+    <script src="js/jquery.tagsinput.js"></script>
+    <script src="js/jquery.placeholder.js"></script>
+    <script src="js/jquery.stacktable.js"></script>
+    <script src="js/application.js"></script>
+
+<tester id="tagsinput_tag_autosize_tester" style="position: absolute; top: -9999px; left: -9999px; width: auto; font-size: 14px; font-family: Lato, Helvetica, Arial, sans-serif; font-weight: 400; letter-spacing: 0px; white-space: nowrap;"></tester></body></html>
